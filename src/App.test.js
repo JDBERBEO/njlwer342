@@ -35,6 +35,7 @@ it('creates a new task with the correct text', () => {
   const tasks = ['Sacar la ropa', 'Hacer la cama', 'Leer un rato']
   const newTask = wrapper.find('#new-task');
   newTask.simulate('change', { target: { value: 'Hola' }})
+  newTask.simulate('keyDown', { key: 'Enter' })
   newTask.simulate('keyPress', { key: 'Enter' })
   if(wrapper.find('li').length  === 4)
     expect(wrapper.find('li').length).toBe(4);
